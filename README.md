@@ -10,6 +10,7 @@ Email: kishorehari@iisc.ac.in
 
 - R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming
 - R for Data Sciences by Hadley Wickham and Garett Grolemund : https://r4ds.had.co.nz/
+- Hands-On Programming with R by Garrett Grolemund : https://rstudio-education.github.io/hopr/index.html
 - Swirl R, a package for interactive learning of R language : https://swirlstats.com/
 - R for Dummies and R Projects for Dummies 
 
