@@ -24,7 +24,7 @@ Vectors are ubiquitous to R. The six elementary data types are considered as ato
 The way to define a vector is as follows:
 
 ```{r}
-myVector <- c(1,2,4,2,6.5) # A numerical vector
+myVector <- c(1,2,4,2,6.5, 7) # A numerical vector
 class(myVector)
 myVector2 <- c("a", "P", "d", "Hello") # A character vector
 class(myVector2)
@@ -96,7 +96,7 @@ for (val in myVector) {
 s
 ```
 
-We will call the previous method the index method and this one the value method. Below are a few examples that we have seen in class:
+We will call the previous method the **index method** and this one the **value method**. Below are a few examples that we have seen in class:
 
 ```{r}
 ## Print the squares of all numbers in a vector
@@ -135,4 +135,4 @@ p
         *****
         ******
     iii. Calculate the factorial of a given number. See the formula give here: <https://en.wikipedia.org/wiki/Factorial>
-    iv. A person has taken a loan from the bank worth Rs 1,00,000, at an interest rate of 6% per annum. Assuming the interest is simple, write a program to calculate the amount owed to the bank at the end of 5 years. Write a similar program, assuming compound interest. 
+    iv. A person has taken a loan from the bank worth Rs. 1,00,000, at an interest rate of 6% per annum. Assuming the interest is simple, write a program to calculate the amount owed to the bank at the end of 5 years. Write a similar program, assuming compound interest. 
