@@ -1,0 +1,80 @@
+---
+title: "Assignment 1"
+date: "2022-09-05"
+output: 
+    pdf_document: 
+        number_sections: true
+        
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instructions
+
+## General Instructions
+1. There are four questions in the assignment, that need you to apply the knowledge of basics of R, for loops, if statements and a little bit of functions. 
+2. The total score for the assignment is 20. The marks for each questions are as follows: 
+    - Question 1: 2 marks
+    - Question 2: 4 marks
+    - Question 3: 5 marks
+    - Question 4: 9 marks
+3. For questions 3 and 4, write your logic before writing the code.
+4. Bonus marks for shorter codes!
+
+## Plagiarism related
+You can discuss among yourselves to solve the questions, but write the answers on your own and make sure you understand what you are writing. I can spot a copied code and I will ask you questions about it if I do!
+
+## Submission related
+
+1. The assignment will be submitted at this form: <https://forms.gle/3nbHVoemTcaAkkAR7>. You can submit your answers in two ways: 
+    a. Option 1: Download the `.Rmd` file of the assignment. Write your answers in the same file below each corresponding question. Rename the file in the format: `Name_assgn1`. For example, `Kishore_assgn1`. 
+    b. Option 2: Write individual scripts for each question. Name the scripts in the format: `Name_assgn1_questionNumer` (e.g.: `Kishore_assgn1_1`). Write the non-code answers to each question in a word file. Name the word file in the format: `Name_assgn1`. Upload these files as a zip file.  
+2. Submission deadline is **15th September, 2022**. You can submit multiple times before the deadline. But no late submissions please!
+
+\newpage
+
+# Questions
+
+1. Which class do the following pre-defined variables belong to?
+    a. `LETTERS`
+    b. `ifelse`
+    c. `pi`
+    d. `month.name`
+    e. `F`
+    
+2. Look up the functions below in the help page. Identify and write down the arguments the functions take, the class of these arguments, the value and the class of the function output.
+    a. `rep`
+    b. `seq_along`
+    c. `readline`
+    d. `sort`
+    e. `data`
+    f. `table`
+    g. `library`
+    h. `ls`
+    i. `rm`
+    j. `is.character`
+    k. `as.character`
+    
+3. Print the lyrics to the song "Alice the camel" using for loops and functions. You can find the lyrics here: <https://supersimple.com/song/alice-the-camel/>
+**Hint** You can use nested for loops, or you can write a function to print each stanza given a name, a number and a characteristic (Alice, one, hump for example), and use a for loop to print multiple stanzas.
+
+4. For the `Titanic` dataset we used in class (consult the code written in class or the notes), we had calculated the survival rate (chance of survival) of males and females and found that the survival rate of females is higher than males. The formula for survival rate is: 
+$$Rate = \frac{number\ of\ people\ survived}{total\ number\ of\ people}$$
+For example, there were $1731$ male passengers, out of which $367$ survived. Hence the survival rate is $\frac{367}{1731} = 0.21$ . 
+Using this information, write a code using for loops and if statements to answer the following questions:
+    a. Which class (1st, 2nd, 3rd, crew) of passengers had a better rate of survival? 
+    b. Each passenger is assigned 3 characteristics: class, sex and age. Which combination of characteristics (let us call it a *category*). has the best rate of survival? `"1st, Male, Adult"` is an example of passengers, for example. Hint: use the function `paste0` over the columns of the `Titanic` table. 
+
+**Useful code for loading the titanic table:**
+```{r}
+data("Titanic")
+Titanic <- data.frame(Titanic)
+gender <- as.character(Titanic$Sex)
+ageGroup <- as.character(Titanic$Age)
+cabinClass <- as.character(Titanic$Class)
+survived <- as.character(Titanic$Survived)
+categoryCount <- as.numeric(Titanic$Freq)
+```
+
