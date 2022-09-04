@@ -12,7 +12,7 @@ Email: kishorehari@iisc.ac.in
 - R for Data Sciences by Hadley Wickham and Garett Grolemund : https://r4ds.had.co.nz/
 - Hands-On Programming with R by Garrett Grolemund : https://rstudio-education.github.io/hopr/index.html
 - Swirl R, a package for interactive learning of R language : https://swirlstats.com/
-- R for Dummies and R Projects for Dummies 
+- R markdown, a package to generate reports and write code and text together : https://bookdown.org/yihui/rmarkdown-cookbook/
 
 # Instructions for the class on 01-09-2022
 
