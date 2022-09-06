@@ -14,9 +14,24 @@ Email: kishorehari@iisc.ac.in
 - Swirl R, a package for interactive learning of R language : https://swirlstats.com/
 - R markdown, a package to generate reports and write code and text together : https://bookdown.org/yihui/rmarkdown-cookbook/
 
-# Instructions for the class on 06-09-2022
+# Instructions to using Swirl, the interactive tutorial for R
 
-1. Go through the first assignment uploaded in the folder **Assignments**
-2. We will discuss any doubts you might have in class. 
+1. run the command `install.packages("swirl")`
+2. run the commans `swirl()`
+3. Follow the instructions on the screen, and when you get the option, chose the course "R Programming: The basics of programming in R"
+4. Go through lessons 1 to 9.
+
+# Chapters to cover in [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html)
+
+- Chapters 1,2,3 : Basics of R and Rstudio and functions
+- Chapters 4,5,6,7 : Variables and data structures
+- Chapter 9 : conditions (if, if-else...)
+- Chapter 11 : loops
+
+# Relevant chapters in [r4ds](https://r4ds.had.co.nz/)
+
+- Chapter 19 : Functions
+- Chapter 21 : Loops
+- Chapter 27 : R markdown
 
 
