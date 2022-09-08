@@ -8,8 +8,12 @@ Email: kishorehari@iisc.ac.in
 
 ## Relevant books and resources
 
-- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming
+### Main references:
+
 - R for Data Sciences by Hadley Wickham and Garett Grolemund : https://r4ds.had.co.nz/
+- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming
+
+### Additional references for practice
 - Hands-On Programming with R by Garrett Grolemund : https://rstudio-education.github.io/hopr/index.html
 - Swirl R, a package for interactive learning of R language : https://swirlstats.com/
 - R markdown, a package to generate reports and write code and text together : https://bookdown.org/yihui/rmarkdown-cookbook/
@@ -33,5 +37,10 @@ Email: kishorehari@iisc.ac.in
 - Chapter 19 : Functions
 - Chapter 21 : Loops
 - Chapter 27 : R markdown
+
+# For quick revision
+
+- Introduction to R manual by CRAN : https://cran.r-project.org/doc/manuals/R-intro.pdf (1,2,3,6,9,10.1 - 20 pages in total)
+- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming (5, 10, 14, 15 - ~20 pages)
 
 
