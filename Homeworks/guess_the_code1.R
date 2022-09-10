@@ -23,7 +23,7 @@ f2 <- function(x, y) {
     }
     else {
         z <- c(z, x[(l+1):l1])
-    }
+    }+
     return(z)
 }
 
@@ -65,6 +65,9 @@ f5 <- function(a, d = c(500, 100, 10, 5, 2,1)) {
     }
     return(nO)
 }
+
+f5(a = 1200, d = c(100, 10, 5, 2,1))
+f5(a = 1200)
 
 # What is d here?
 # What should a be?
@@ -123,3 +126,13 @@ f8 <- function(x) {
 
 # What are the possible classes of x?
 # Give a suitable name to this function
+
+
+# f1: reverse a given vector
+# f2: concatenate two vectors
+# f3: vector cross product
+# f4: swap values
+# f5: number of currency notes for a given amount of money
+# f6: sort a vector in ascending order
+# f7: decorator
+# f8: decorator
