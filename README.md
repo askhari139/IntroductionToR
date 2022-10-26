@@ -40,7 +40,7 @@ Email: kishorehari@iisc.ac.in
 
 # For quick revision
 
-- Introduction to R manual by CRAN : https://cran.r-project.org/doc/manuals/R-intro.pdf (1,2,3,6,9,10.1 - 20 pages in total)
+- Introduction to R manual on CRAN : https://cran.r-project.org/doc/manuals/R-intro.pdf (1,2,3,6,9,10.1 - 20 pages in total)
 - R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming (5, 10, 14, 15 - ~20 pages)
 
 
