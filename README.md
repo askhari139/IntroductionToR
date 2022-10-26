@@ -11,7 +11,7 @@ Email: kishorehari@iisc.ac.in
 ### Main references:
 
 - R for Data Sciences by Hadley Wickham and Garett Grolemund : https://r4ds.had.co.nz/
-- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming
+- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming, https://bookdown.org/rdpeng/rprogdatascience/
 
 ### Additional references for practice
 - Hands-On Programming with R by Garrett Grolemund : https://rstudio-education.github.io/hopr/index.html
