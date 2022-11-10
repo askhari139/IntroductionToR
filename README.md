@@ -10,6 +10,7 @@ Email: kishorehari@iisc.ac.in
 
 ### Main references:
 
+- Introduction to R manual on CRAN : https://cran.r-project.org/doc/manuals/R-intro.pdf
 - R for Data Sciences by Hadley Wickham and Garett Grolemund : https://r4ds.had.co.nz/
 - R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming, https://bookdown.org/rdpeng/rprogdatascience/
 
@@ -18,29 +19,14 @@ Email: kishorehari@iisc.ac.in
 - Swirl R, a package for interactive learning of R language : https://swirlstats.com/
 - R markdown, a package to generate reports and write code and text together : https://bookdown.org/yihui/rmarkdown-cookbook/
 
-# Instructions to using Swirl, the interactive tutorial for R
+## Exam syllabus:
+- Introduction to R manual (https://cran.r-project.org/doc/manuals/R-intro.pdf): Chapters 1,2,3,5,6,7, 9,10
+- R for datasciences (https://r4ds.had.co.nz/): Chapters 1-7 (8 optional), 11, 14, 18,19,20 (19 and 20 are revision from previous book), 27.
+
+## Instructions to using Swirl, the interactive tutorial for R
 
 1. run the command `install.packages("swirl")`
 2. run the commans `swirl()`
 3. Follow the instructions on the screen, and when you get the option, chose the course "R Programming: The basics of programming in R"
 4. Go through lessons 1 to 9.
-
-# Chapters to cover in [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html)
-
-- Chapters 1,2,3 : Basics of R and Rstudio and functions
-- Chapters 4,5,6,7 : Variables and data structures
-- Chapter 9 : conditions (if, if-else...)
-- Chapter 11 : loops
-
-# Relevant chapters in [r4ds](https://r4ds.had.co.nz/)
-
-- Chapter 19 : Functions
-- Chapter 21 : Loops
-- Chapter 27 : R markdown
-
-# For quick revision
-
-- Introduction to R manual on CRAN : https://cran.r-project.org/doc/manuals/R-intro.pdf (1,2,3,6,9,10.1 - 20 pages in total)
-- R programming for Data Science by Roger D Peng : https://leanpub.com/rprogramming (5, 10, 14, 15 - ~20 pages)
-
 
