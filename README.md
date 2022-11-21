@@ -30,3 +30,7 @@ Email: kishorehari@iisc.ac.in
 3. Follow the instructions on the screen, and when you get the option, chose the course "R Programming: The basics of programming in R"
 4. Go through lessons 1 to 9.
 
+## Useful links for practice:
+
+1. https://michaelgastner.com/DAVisR2021/
+2. http://r-tutorials.com
