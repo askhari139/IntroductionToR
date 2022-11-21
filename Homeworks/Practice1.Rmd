@@ -1,0 +1,31 @@
+---
+title: "Practice Problems"
+author: "Kishore Hari"
+date: "2022-11-17"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basic
+
+1. Do you know what "FLAMES" calculation is? Google it. Write a function that takes the names of two people and calculates the "FLAMES" compatibility .
+2. Write a function that takes a number of teams and generates a groups matching schedule (for FIFA/ IPL).
+3. Encrypting text is a huge application of programming. Write a code that takes a string and transforms it using the following rules:
+    a. All numbers are changed to corresponding lower case alphabet (1 is changed to a, 2 to b and so on.)
+    b. All alphabet are shifted by 2, in uppercase. (a is C, B is D, X is Z, Z is B)
+    c. All special characters are maintained as they are.
+4. Write a function that takes a date and finds out the day of the year. The input format of the date shall be "DD-MM-YYYY". Assume that each year has exactly 365 days (ignoring the concept of leap years). Then find out which R function allows you to do the same thing. Check the output of your function against that of the R function. 
+
+
+## Intermediate
+
+1. Implement the bubble sort algorithm for a vector of numbers. See this video to understand bubble sort: https://www.youtube.com/watch?v=Cq7SMsQBEUw
+2. Write a function that takes four digits and identifies the set of arithmetic operations that when applied on the numbers result in the number 10. For example, if the numbers are 5,2,1,2; 5\*2\*(2-1)
+
+## Advanced
+
+1. Implement quick-sort algorithm.
+2. Design the game tic-tac-toe in the console for two players. Think about how to design a bot to play the game for you.
