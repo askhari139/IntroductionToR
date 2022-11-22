@@ -34,3 +34,4 @@ Email: kishorehari@iisc.ac.in
 
 1. https://michaelgastner.com/DAVisR2021/
 2. http://r-tutorials.com
+3. https://www.r-exercises.com/start-here-to-learn-r/ : A topic by topic description followed by exercises to give you a hands-on experience.
