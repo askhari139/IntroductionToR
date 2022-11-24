@@ -1,0 +1,202 @@
+---
+title: "revision1"
+author: "Kishore Hari"
+date: "2022-11-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Topics
+
+1. For loops \/
+2. ggplot 
+3. dplyr
+4. matrix and list \/
+5. default arguments \/
+6. regex
+7. boxplot
+8. apply functions \/
+
+
+Print the numbers from 1 to 100. If the number is divisible by 3, print "fizz". If it is divisible by 5, print "buzz". If it is divisible by both, print "fizzbuzz"
+
+```{r}
+factCalc <- function(n) {
+    f <- 1
+    for (i in 1:n) {
+        f <- f*i
+    }
+}
+
+factCalc <- function(n) {
+    f <- 1
+    sapply(1:n, function(i) {
+        f <- f*i
+    })
+}
+
+factCalc <- function(n) {
+    f <- 1
+    i <- 1
+    while(i < n) {
+        f <- f*i
+        i <- i + 1
+    }
+}
+
+
+numPrinter <- function(n = 100) {
+    for (i in 1:n) {
+        if (i %% 15 == 0){
+            print("fizzbuzz")
+        }
+        else if (i %% 3 == 0) {
+            print("fizz")
+        }
+        else if (i %%5 == 0) {
+            print("buzz")
+        }
+        else {
+            print(i)
+        }
+        if (i > 200) {
+            break
+        }
+    }
+}
+numPrinter()
+numPrinter(200)
+numPrinter(n = 1000)
+
+numPrinter <- function(n = 100) {
+    for (i in 1:n) {
+        if (i %% 3 == 0){
+            print("fizz")
+        }
+        else if (i %% 15 == 0) {
+            print("fizzbuzz")
+        }
+        else if (i %%5 == 0) {
+            print("buzz")
+        }
+        else {
+            print(i)
+        }
+    }
+}
+
+
+```
+
+
+1. Write a function that takes a number of teams and generates a groups matching schedule.
+2. Generate the following plot using the first 5000 rows of flights dataset
+
+```{r}
+l <- list(char = "a", num = 5, vec = c(1,2,3,4), dat = flights)
+l
+l[[1]]
+l[1]
+l$num
+l[["num"]]
+names(l)
+names(l) <- c("A", "B", "C", "D")
+x <- c(a = 1, b = 4, c = 6)
+```
+
+# sapply vs lapply
+
+Iterate through the numeric columns of flights dataset and return the mean, standard deviation and median of each column.
+
+```{r}
+df1 <- flights %>% select(is.numeric)
+for(i in 1:ncol(df1)) {
+    mn <- mean(df[[i]])
+    ss <- sd(df[[i]])
+    md <- median(df[[i]])
+    c(mn, ss, md) %>% print
+}
+
+d <- sapply(1:ncol(df1), function(i) {
+    mn <- mean(df1[[i]], na.rm =T)
+    ss <- sd(df1[[i]], na.rm = T)
+    md <- median(df1[[i]], na.rm = T)
+    c(mn, ss, md)
+})
+
+d <- lapply(1:ncol(df1), function(i) {
+    mn <- mean(df1[[i]], na.rm =T)
+    ss <- sd(df1[[i]], na.rm = T)
+    md <- median(df1[[i]], na.rm = T)
+    c(mn, ss, md)
+})
+```
+
+sapply vs lapply
+
+
+## dplyr
+
+```{r}
+df <- flights %>% arrange(arr_delay, dep_delay)
+View(df %>% select(arr_delay, dep_delay))
+
+```
+
+
+
+```{r}
+data("Titanic")
+df <- Titanic %>% data.frame
+df1 <- gather(df, key = "Classification", value = "Value", -Freq)
+```
+
+
+```{r}
+library(nycflights13)
+
+df <- flights[1:5000, ]
+
+df1 <- df %>% filter(air_time > 1000)
+
+df2 <- df %>% arrange(desc(air_time))
+View(df2)
+
+df3 <- df %>% select(is.numeric)
+
+colz <- c()
+for (i in 1:ncol(df)) {
+    if (is.numeric(df[[i]]))
+        colz <- c(colz, i)
+}
+df3 <- df[, colz]
+
+df4 <- df %>% mutate(total_delay = arr_delay + dep_delay)
+```
+
+
+
+```{r}
+df1 <- df %>% arrange()
+all(df1$dep_time == df$dep_time)
+all(df == df1, na.rm = T)
+```
+group_by and summarise
+
+```{r}
+df5 <- df %>% group_by(origin) %>% summarise(M = mean(arr_delay))
+```
+
+
+## ggplot2
+
+```{r}
+ggplot(df, aes(x = carrier)) + geom_bar() +
+    theme() + 
+    labs() + 
+    facet_wrap()
+```
+

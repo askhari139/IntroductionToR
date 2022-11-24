@@ -1,0 +1,24 @@
+---
+title: "Practice2"
+author: "Kishore Hari"
+date: "2022-11-24"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This is an example for cleaning data. Download the text file at this link: https://michaelgastner.com/DAVisR_data/homicides.txt. If you open it in a text editor like wordpad, you will see that there is a consistent structure. However, the delimiters are not consistent. Therefore, your task is to convert the text data into a dataframe. You can read the file using the function `r x <- read_lines("https://michaelgastner.com/DAVisR_data/homicides.txt")`. 
+    a. What is the class of x?
+    b. What are the possible delimiters that you see in the data?
+    c. How many columns can the data be divided into, given that each column must only have one category of information?
+    d. Can you use comma as a delimiter to split the data? If you do so, will there by any inconsistencies? 
+    e. Explore the "quote" argument in read_csv. See that it helps reduce the inconsistencies found in the previous question.
+    f. Write a code to split each row in 12 parts: Longitude, Lattitude, Category_of_homicide, case_number, Victim_name, Address, Victim_description, Gender, Victim_age, Date_of_homicide, Place_of_death, Cause_of_death. Hint: Use the function `r str_split`.
+    g. Using the code above, convert the text file into a dataframe of 12 columns.
+    h. Using a barplot of the gender column, find out which gender has the highest number of homicides? Similarly find out, which cause of death is most common? Which month had the highest number of homicides? (Note that you would need to split the date column into day, month and year to do this. Use the `r separate` function in tidyr package)
+
+
+

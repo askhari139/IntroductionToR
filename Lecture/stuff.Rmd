@@ -1,0 +1,48 @@
+---
+title: "string manipulation"
+author: "Kishore Hari"
+date: "2022-11-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stringr)
+```
+
+## Splitting strings
+
+```{r}
+passwd <- c("axb$#3eASD&121", "asa&*787a")
+splitPassword <- str_split(passwd, "")
+ps1 <- splitPassword[[1]]
+numbers <- as.character(0:9)
+output <- ""
+for(i in ps1) {
+    if (i %in% numbers) {
+        j <- as.integer(i)
+        output <- paste0(output, letters[j])
+    }
+    else if (i %in% letters || i %in% LETTERS) {
+        j <- toupper(i)
+        id <- which(LETTERS == j)
+        id <- id + 2
+        if (id > length(LETTERS)) {
+            id <- id - length(LETTERS)
+        }
+        output <- paste0(output, LETTERS[id])
+    }
+    else {
+        output <- paste0(output, i)
+    }
+}
+```
+
+
+## Reading tables
+
+```{r}
+df <- readLines("")
+```
+
+
