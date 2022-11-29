@@ -125,5 +125,64 @@ for (val in 1:10) {
 2. Write a function that takes a vector and prints the number of even numbers in the vector. Call the function with the following vectors. 
     i. `r c(1,2,3,5,4,45,90)`
     ii. `r c(3,4,5,34,4545)`
+```r{}
+evens <- function(x) {
+    numEvens <- 0
+    for (i in x) {
+        if (i %%2 == 0) {
+            numEvens <- numEvens + 1
+        }
+    }
+    return(numEvens)
+}
+numEvens(c(1,2,3,5,4,45,90))
+numEvens(c(3,4,5,34,4545))
+evensSapply <- function(x) {
+    evensCount <- sapply(x, function(i) {
+        i %%2 == 0
+    }) %>% sum
+    return(evensCount)
+}
+evensSapply(c(1,2,3,5,4,45,90))
+evensSapply(c(3,4,5,34,4545))
+# Note that both functions do the same thing. 
+```
 3. Write a function that takes a number, and prints the square root of the number if the number is greater than 100, square of the number if it is less than 10, the number itself otherwise. Call the function with the numbers: `5, 10, 30, 500, 1000`
-4. Your friend borrowed Rs. 1,00,000 from you and wants to return the money in installments in a unique way. Starting from Sunday as 1, he will count the number corresponding to the current day of the week, (monday is 2, tuesday is 3 and so on. let this number be D) and current week (1st week is 1, 2nd is 2 and so on. let this number be W). He will then return to you an amount equal to $W*D^2$. How long till he returns all the money to you? Make sure that the last installment is adjusted such that the total does not cross 1,00,000.  
+```r{}
+customPrinter <- function(x) {
+    if (x > 100) {
+        print(sqrt(x))
+    }
+    else if (x < 10) {
+        print(x^2)
+    }
+    else {
+        print(x)
+    }
+}
+sapply(c(5, 10, 30, 500, 1000), customPrinter) # Note this as a way to call the function multiple times.
+```
+4. Your friend borrowed Rs. 1,00,000 from you and wants to return the money in installments in a unique way. Starting from Sunday as 1, he will count the number corresponding to the current day of the week, (monday is 2, tuesday is 3 and so on. let this number be D) and current week (1st week is 1, 2nd is 2 and so on. let this number be W). He will then return to you an amount equal to $W*D^2$. How long till he returns all the money to you? Make sure that the last installment is adjusted such that the total does not cross 1,00,000. 
+
+```r{}
+# Using while loop.
+borrowed <- 100000
+returned <- 0
+numDay <- 0 # This is D in the question
+numWeek <- 1 # This is W in the question
+while(returned < borrowed) {
+    numDay <- numDay + 1
+    amt <- numWeek*numDay^2
+    if (returned + amt > borrowed) {
+        amt <- borrowed - returned
+    }
+    returned <- returned + amt
+    if (numDay == 7) {
+        numDay <- 0
+        numWeek <- numWeek + 1
+    }
+}
+total_num_days <- (numWeek-1)*7 + numDay # Why numWeek-1?
+
+
+```
