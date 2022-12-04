@@ -1,0 +1,82 @@
+---
+title: "Practice2"
+author: "Kishore Hari"
+date: "2022-11-24"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(formatR)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE)
+library(tidyverse)
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = xfun::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
+
+
+*This is an example for cleaning data. Download the text file at this link: https://michaelgastner.com/DAVisR_data/homicides.txt. If you open it in a text editor like wordpad, you will see that there is a consistent structure. However, the delimiters are not consistent. Therefore, your task is to convert the text data into a dataframe. You can read the file using the function `r x <- read_lines("https://michaelgastner.com/DAVisR_data/homicides.txt")`. *
+
+```{r}
+x <- read_lines("https://michaelgastner.com/DAVisR_data/homicides.txt")
+```
+
+a. *What is the class of x?*
+```{r}
+class(x)
+```
+
+b. *What are the possible delimiters that you see in the data?*
+
+Possible delimiters: comma, "<", ">", "\<dd>", "\</dd>", "\<dl>", "\</dl>". Note that a delimiter doesn't have to be a single character.
+
+```{r linewidth=80}
+write_lines(x[1], file = stdout())
+```
+    
+    
+
+c. *How many columns can the data be divided into, given that each column must only have one category of information?*
+    
+    Minimum 5. I count 12 in total. But there can be more?
+
+d. *Can you use comma as a delimiter to split the data? If you do so, will there by any inconsistencies?* 
+    
+    There are three ways to do this: using read_csv, read.csv with quote argument and splitting the strings based on commas, like we discussed in class. Let us look at the first two methods:
+    
+```{r}
+# Method 1: read_csv
+df <- read_csv("https://michaelgastner.com/DAVisR_data/homicides.txt", col_names = F)
+ncol(df) 
+head(df, n = 10)
+nrow(df)
+tail(df, n = 10)
+
+# Method 2: read.csv with quote argument
+df2 <- read.csv("https://michaelgastner.com/DAVisR_data/homicides.txt",
+               header = F, quote = "'")
+ncol(df2) 
+head(df2, n = 10)
+nrow(df2)
+tail(df2, n = 10)
+
+```
+
+    Notice the difference between the two dataframes. The number of columns being different is expected, since the last column in quotes has multiple commas. But the number of rows is also different. In such cases, one should start by looking at the two data frames, trying to identify the differences. In this case I found that the head (first 10 rows) look similar, but the tail (last 10 rows) look different. 
+e. *Explore the "quote" argument in read_csv. See that it helps reduce the inconsistencies found in the previous question.*
+f. *Write a code to split each row in 12 parts: Longitude, Lattitude, Category_of_homicide, case_number, Victim_name, Address, Victim_description, Gender, Victim_age, Date_of_homicide, Place_of_death, Cause_of_death. Hint: Use the function `str_split`.*
+g. *Using the code above, convert the text file into a dataframe of 12 columns.*
+h. *Using a barplot of the gender column, find out which gender has the highest number of homicides? Similarly find out, which cause of death is most common? Which month had the highest number of homicides? (Note that you would need to split the date column into day, month and year to do this. Use the `separate` function in tidyr package)*
+
+
+
