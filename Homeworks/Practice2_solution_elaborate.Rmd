@@ -22,6 +22,7 @@ knit_hooks$set(output = function(x, options) {
   }
   hook_output(x, options)
 })
+knitr::opts_chunk$set(linewidth=80)
 ```
 
 
@@ -48,11 +49,11 @@ write_lines(x[1], file = stdout())
 
 c. *How many columns can the data be divided into, given that each column must only have one category of information?*
     
-    Minimum 5. I count 12 in total. But there can be more?
+Minimum 5. I count 12 in total. But there can be more?
 
 d. *Can you use comma as a delimiter to split the data? If you do so, will there by any inconsistencies?* 
     
-    There are three ways to do this: using read_csv, read.csv with quote argument and splitting the strings based on commas, like we discussed in class. Let us look at the first two methods:
+There are three ways to do this: using read_csv, read.csv with quote argument and splitting the strings based on commas, like we discussed in class. Let us look at the first two methods:
     
 ```{r}
 # Method 1: read_csv
@@ -72,7 +73,8 @@ tail(df2, n = 10)
 
 ```
 
-    Notice the difference between the two dataframes. The number of columns being different is expected, since the last column in quotes has multiple commas. But the number of rows is also different. In such cases, one should start by looking at the two data frames, trying to identify the differences. In this case I found that the head (first 10 rows) look similar, but the tail (last 10 rows) look different. 
+Notice the difference between the two dataframes. The number of columns being different is expected, since the last column in quotes has multiple commas. But the number of rows is also different. In such cases, one should start by looking at the two data frames, trying to identify the differences. In this case I found that the head (first 10 rows) look similar, but the tail (last 10 rows) look different. 
+
 e. *Explore the "quote" argument in read_csv. See that it helps reduce the inconsistencies found in the previous question.*
 f. *Write a code to split each row in 12 parts: Longitude, Lattitude, Category_of_homicide, case_number, Victim_name, Address, Victim_description, Gender, Victim_age, Date_of_homicide, Place_of_death, Cause_of_death. Hint: Use the function `str_split`.*
 g. *Using the code above, convert the text file into a dataframe of 12 columns.*
