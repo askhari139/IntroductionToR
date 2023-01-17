@@ -1,0 +1,146 @@
+---
+title: "Model Answers Set1"
+author: "Kishore Hari"
+date: "2022-11-26"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Section 1
+
+1. a
+2. b
+3. d
+4. b,c,d
+5. a
+6. a,b,c
+7. character, numeric, integer, complex, logical
+8. a
+9. d
+
+## Section 2
+
+10. a, d
+11. a
+12. a
+13. b
+14. Sorting
+
+## Section 3
+
+```{r}
+df <- read_csv("ds_salaries.csv")
+```
+
+```{r}
+#15
+ncol(df)
+
+#16
+df %>% ggplot(aes(x = salary_in_usd)) + 
+    geom_histogram(fill = "red") + 
+    theme(axis.text.x = element_text(angle = 60, hjust = 1, vjust = 1),
+          panel.background = element_blank(), 
+          axis.title = element_text(face = "bold"),
+          panel.grid = element_blank())
+
+#17
+df %>% ggplot(aes(x = salary_in_usd)) + 
+    geom_histogram(fill = "red") + 
+    theme(axis.text.x = element_text(angle = 60, hjust = 1, vjust = 1),
+          panel.background = element_blank(), 
+          axis.title = element_text(face = "bold"),
+          panel.grid = element_blank()) +
+    facet_wrap(~experience_level, ncol = 2)
+
+
+
+#18
+d <- df %>% 
+    group_by(company_location) %>%
+    summarise(Avg = mean(salary_in_usd)) %>%
+    arrange(desc(Avg))
+
+#19
+print("Russia")
+print("User choice")
+
+#20
+df1 <- df %>% 
+    mutate(conversion_rate = salary/salary_in_usd)
+
+#21
+df2 <- df1 %>%
+    group_by(salary_currency) %>%
+    summarise(Avg = mean(conversion_rate)) %>%
+    filter(salary_currency == "INR")
+print(df2$Avg)
+```
+
+
+## Section 4
+
+```{r}
+#22
+
+calculator <- function(num1, num2, char) {
+    if (!is.numeric(num1) || !is.numeric(num2) || !is.character(char)) {
+        print("Invalid inputs")
+    }
+    else if (char == "-") {
+        num1-num2
+    }
+    else if (char == "+") {
+        num1 + num2
+    }
+    else {
+        print("Invalid character")
+    }
+}
+calculator(2,3,"+")
+calculator(3, "4", "-")
+calculator(3, "a", "-")
+calculator(5,6,"a")
+
+#23
+
+denominations <- function(a) {
+    d <- c(100, 50, 10, 5, 2,1)
+    nO <- numeric(length(d))
+    for (i in 1:length(d)) {
+        nO[i] <- a%/%d[i]
+        a <- a-nO[i]*d[i]
+    }
+    if (a != 0) {
+        print("Insufficient d")
+    }
+    return(nO)
+}
+denominations(111)
+denominations(3000)
+denominations(23232)
+denominations(4354)
+
+#24
+
+crossProduct <- function(x, y) {
+    if (length(x) < length(y)) {
+        x <- c(x, rep(0, length(y) - length(x)))
+    }
+    if (length(x) > length(y)) {
+        y <- c(y, rep(0, length(x) - length(y)))
+    }
+    dot <- x*y
+    magx <- sum(x^2) %>% sqrt
+    magy <- sum(y^2) %>% sqrt
+    theta <- acos(dot/(magx*magy))
+    return(theta)
+}
+
+```
+
+
