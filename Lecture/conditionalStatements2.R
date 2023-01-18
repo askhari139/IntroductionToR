@@ -45,7 +45,23 @@ print(male)
 print(female)
 
 #3. How many of them were adults? How many children?
+
+adult <- 0
+children <- 0
+for (i in 1:length(age)) {
+    a <- age[i]
+    cn <- count[i]
+    if (a == "Adult")
+        adult <- adult+cn
+    else if(a == "Child")
+        children <- children + cn
+}
+print(adult)
+print(children)
+
 #4. How many of them survived?
+
+
 
 #5. How many males survived? How many females survived?
 
